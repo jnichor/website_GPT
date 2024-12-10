@@ -1,0 +1,1995 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Analysis: Dynamics of Software Development in South Asia &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Datanalysis';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Google Trends about the Crisis in Bangladesh" href="Googletrends.html" />
+    <link rel="prev" title="Demographic Data: Density and Land Development" href="maps.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="maps.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/icon.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/icon.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="maps.html">
+                    Demographic Data: Density and Land Development
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Analysis: Dynamics of Software Development in South Asia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Googletrends.html"><strong>Google Trends about the Crisis in Bangladesh</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDatanalysis.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Datanalysis.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Analysis: Dynamics of Software Development in South Asia</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-overview">Project Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">Data Collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-of-analysis">Units of Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-metrics-analyzed">Key Metrics Analyzed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#developer-activity">1. Developer Activity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-growth">2. Repository Growth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pushes">3. Git Pushes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organizations">4. Organizations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-languages">5. Programming Languages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-data-insights">Visual Data Insights</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-language-adoption-trends-in-south-asia-a-comparative-study-of-pushers-activity-in-bangladesh-sri-lanka-and-india-2020-2024">Programming Language Adoption Trends in South Asia: A Comparative Study of Pushers Activity in Bangladesh, Sri Lanka, and India (2020-2024)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bangladesh-number-of-pushers-per-100k-by-programming-language">Bangladesh - Number of Pushers per 100k by Programming Language</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-observations">Key Observations:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sri-lanka-number-of-pushers-per-100k-by-programming-language">Sri Lanka - Number of Pushers per 100k by Programming Language</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-analysis-with-bangladesh">Comparative Analysis with Bangladesh:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#india-number-of-pushers-per-100k-by-programming-language">India - Number of Pushers per 100k by Programming Language</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-analysis-with-bangladesh-and-sri-lanka">Comparative Analysis with Bangladesh and Sri Lanka:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technological-growth-and-innovation-across-south-asia-a-comparative-analysis-of-india-bangladesh-and-sri-lanka-2020-2024">Technological Growth and Innovation Across South Asia: A Comparative Analysis of India, Bangladesh, and Sri Lanka (2020-2024)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-pushes-per-100k-by-country-2020q1-2024q1">Number of Pushes per 100k by Country (2020Q1 - 2024Q1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-insights">Comparative Insights:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-repositories-per-100k-by-country-2020q1-2024q1">Number of Repositories per 100k by Country (2020Q1 - 2024Q1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Comparative Insights:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-developers-per-100k-by-country-2020q1-2024q1">Number of Developers per 100k by Country (2020Q1 - 2024Q1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Comparative Insights:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-organizations-per-100k-by-country-2020q1-2024q1">Number of Organizations per 100k by Country (2020Q1 - 2024Q1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Comparative Insights:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licenses">Licenses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics">Topics</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-analysis-dynamics-of-software-development-in-south-asia">
+<h1>Data Analysis: Dynamics of Software Development in South Asia<a class="headerlink" href="#data-analysis-dynamics-of-software-development-in-south-asia" title="Link to this heading">#</a></h1>
+<section id="project-overview">
+<h2>Project Overview<a class="headerlink" href="#project-overview" title="Link to this heading">#</a></h2>
+<p>The software development industries in Bangladesh, Sri Lanka, and India have shown dynamic growth over the past decade. This analysis aims to provide a comprehensive, data-driven understanding of the trends, challenges, and opportunities within the software development sectors of these countries. Using data from various sources, including the GitHub Innovation Graph, the analysis will explore key metrics related to software activity, collaboration, and industry growth.</p>
+<p>The report is structured as follows:</p>
+<ul class="simple">
+<li><p><strong>Data Collection</strong>: Details on the datasets used for the analysis, including their sources and relevance to the software industry in each country.</p></li>
+<li><p><strong>Data Analysis</strong>: An exploration of the key trends identified from the data, highlighting differences and similarities between the three countries.</p></li>
+<li><p><strong>Conclusions</strong>: Insights drawn from the data analysis, with potential implications for the future of software development in the region.</p></li>
+</ul>
+</section>
+<section id="data-collection">
+<h2>Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h2>
+<p>The data for this analysis is sourced from multiple publicly available datasets and repositories, primarily focusing on software development activity. The <strong>GitHub Innovation Graph</strong> is the primary source, providing structured data on developer activity aggregated by economy. Additional sources include government reports and industry publications from each country.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Dataset</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>License</p></th>
+<th class="head"><p>Access</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>GitHub Innovation Graph</p></td>
+<td><p>Data on Git pushes, developers, organizations, repositories, and other software development metrics.</p></td>
+<td><p>Open</p></td>
+<td><p><a class="reference internal" href="#"><span class="xref myst">GitHub Innovation Graph</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="units-of-analysis">
+<h2>Units of Analysis<a class="headerlink" href="#units-of-analysis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Git Pushes, Developers, Repositories, Collaborators:</strong> For these metrics, the unit of analysis is Country-Quarter. This means that the data is analyzed based on the country and the quarter, allowing for the observation of how Git pushes, the number of active developers, the growth of repositories, and international collaborations evolve over each quarter in each country (Bangladesh, Sri Lanka, and India). This approach enables both temporal and geographic comparisons, highlighting trends within each country over time.</p></li>
+<li><p><strong>Languages:</strong> In this case, the unit of analysis is Country-Programming Language-Quarter, meaning that the data is analyzed by country, programming language, and quarter. This allows for a detailed view of which programming languages are most popular in each country and how their usage has changed over time. It enables a comparison of the adoption of languages such as JavaScript, Python, Java, and others across countries and quarters.</p></li>
+</ul>
+</section>
+<section id="key-metrics-analyzed">
+<h2>Key Metrics Analyzed<a class="headerlink" href="#key-metrics-analyzed" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Git Pushes</strong>: The number of code contributions made by developers.</p></li>
+<li><p><strong>Developers</strong>: The total number of active developers per country.</p></li>
+<li><p><strong>Repositories</strong>: Growth in the number of software projects hosted on GitHub.</p></li>
+<li><p><strong>Languages</strong>: The most popular programming languages used. The top 10 languages—JavaScript, Java, Python, TypeScript, C++, PHP, Ruby, C#, and Go—were selected based on various rankings and the number of available observations (Coursera Staff, 2024; DataCamp, 2023; Rice CS, 2023). Other languages like SQL, R, Julia, and Matlab were excluded due to insufficient data, limiting their comparability.</p></li>
+<li><p><strong>Collaborators</strong>: Cross-country collaborations and open-source contributions.</p></li>
+</ul>
+</section>
+<section id="data-analysis">
+<h2>Data Analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h2>
+<section id="developer-activity">
+<h3>1. Developer Activity<a class="headerlink" href="#developer-activity" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong>: Leads with over 1,500 developers per 100k inhabitants by 2024, reflecting a highly active and engaged tech community.</p></li>
+<li><p><strong>India</strong>: Shows steady growth, with nearly 1,000 developers per 100k by 2024, highlighting its massive, growing developer base.</p></li>
+<li><p><strong>Bangladesh</strong>: Trails behind but shows steady progress, growing from just over 200 developers per 100k to over 500 by 2024.</p></li>
+</ul>
+</section>
+<section id="repository-growth">
+<h3>2. Repository Growth<a class="headerlink" href="#repository-growth" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> outpaces the other two countries, exceeding 4,000 repositories per 100k inhabitants by 2024.</p></li>
+<li><p><strong>India</strong> follows closely, with over 2,500 repositories per 100k, while <strong>Bangladesh</strong> lags with just over 1,000 repositories per 100k by 2024.</p></li>
+</ul>
+</section>
+<section id="git-pushes">
+<h3>3. Git Pushes<a class="headerlink" href="#git-pushes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> also leads in Git pushes per capita, surpassing 2,500 pushes per 100k by 2024.</p></li>
+<li><p><strong>India</strong> shows steady growth, nearing 1,000 pushes per 100k.</p></li>
+<li><p><strong>Bangladesh</strong> has lower activity but is growing, reaching around 600 pushes per 100k by 2024.</p></li>
+</ul>
+</section>
+<section id="organizations">
+<h3>4. Organizations<a class="headerlink" href="#organizations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> has the highest number of organizations per capita, with over 90 per 100k by 2024.</p></li>
+<li><p><strong>India</strong> follows with over 50 organizations per 100k, while <strong>Bangladesh</strong> shows slower growth, nearing 30 organizations per 100k by 2024.</p></li>
+</ul>
+</section>
+<section id="programming-languages">
+<h3>5. Programming Languages<a class="headerlink" href="#programming-languages" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>JavaScript</strong> dominates in all three countries, with particularly rapid growth in Sri Lanka.</p></li>
+<li><p><strong>Python</strong> and <strong>PHP</strong> show steady increases across the board, with <strong>Python</strong> gaining significant popularity in India and Sri Lanka for data science and machine learning.</p></li>
+</ul>
+</section>
+</section>
+<section id="visual-data-insights">
+<h2>Visual Data Insights<a class="headerlink" href="#visual-data-insights" title="Link to this heading">#</a></h2>
+<p>To better understand the dynamics of software development in these countries, the following visualizations were created:</p>
+<ol class="arabic simple">
+<li><p><strong>Developer Activity Over Time</strong>: Sri Lanka shows the highest developer engagement per capita, followed by India and Bangladesh.</p></li>
+<li><p><strong>Repository Growth by Country</strong>: Sri Lanka leads in repository creation, while India and Bangladesh show steady growth.</p></li>
+<li><p><strong>Git Pushes per Country</strong>: Sri Lanka continues to dominate, with India and Bangladesh showing more moderate activity.</p></li>
+<li><p><strong>Number of Organizations per Country</strong>: Sri Lanka has the most organizations per capita, followed by India and Bangladesh.</p></li>
+<li><p><strong>Programming Languages</strong>: JavaScript leads in all three countries, with Python and PHP showing steady growth.</p></li>
+</ol>
+</section>
+<section id="programming-language-adoption-trends-in-south-asia-a-comparative-study-of-pushers-activity-in-bangladesh-sri-lanka-and-india-2020-2024">
+<h2>Programming Language Adoption Trends in South Asia: A Comparative Study of Pushers Activity in Bangladesh, Sri Lanka, and India (2020-2024)<a class="headerlink" href="#programming-language-adoption-trends-in-south-asia-a-comparative-study-of-pushers-activity-in-bangladesh-sri-lanka-and-india-2020-2024" title="Link to this heading">#</a></h2>
+<section id="bangladesh-number-of-pushers-per-100k-by-programming-language">
+<h3>Bangladesh - Number of Pushers per 100k by Programming Language<a class="headerlink" href="#bangladesh-number-of-pushers-per-100k-by-programming-language" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">languages</span> <span class="o">=</span> <span class="n">df_filtered_BD</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="c1"># type: ignore</span>
+
+
+<span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">languages</span><span class="p">:</span>
+    <span class="n">filtered_data</span> <span class="o">=</span> <span class="n">df_filtered_BD</span><span class="p">[</span><span class="n">df_filtered_BD</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">lang</span><span class="p">]</span> <span class="c1"># type: ignore</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">filtered_data</span><span class="p">[</span><span class="s1">&#39;year_quarter&#39;</span><span class="p">],</span> <span class="n">filtered_data</span><span class="p">[</span><span class="s1">&#39;num_pushers_pc&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of pushers per 100k by programming language - Bangladesh&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of pushers per 100K&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Programming Languages&#39;</span><span class="p">)</span>
+
+
+<span class="n">text_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Number of periods: 17&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Number of observations: 170&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Number of programming languages: 10&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Source: GitHub Innovation Graph&#39;</span>
+<span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text_data</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+               <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">languages</span> <span class="o">=</span> <span class="n">df_filtered_BD</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="c1"># type: ignore</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">languages</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">filtered_data</span> <span class="o">=</span> <span class="n">df_filtered_BD</span><span class="p">[</span><span class="n">df_filtered_BD</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">lang</span><span class="p">]</span> <span class="c1"># type: ignore</span>
+
+<span class="ne">NameError</span>: name &#39;df_filtered_BD&#39; is not defined
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Number of Pushers per 100k - Bangladesh" src="_images/output_BD.png" /></p>
+<section id="analysis">
+<h4>Analysis<a class="headerlink" href="#analysis" title="Link to this heading">#</a></h4>
+<p>This graph represents the number of pushers per 100,000 inhabitants by programming language in Bangladesh, from Q1 2020 to Q1 2024. Key insights from the graph include:</p>
+<ul class="simple">
+<li><p><strong>JavaScript</strong> shows a steep increase in the number of pushers over time, rising from around 5 per 100k to approximately 17 per 100k, indicating its growing popularity in Bangladesh’s developer community.</p></li>
+<li><p><strong>Python</strong> and <strong>PHP</strong> also display moderate growth, with Python being the most steadily increasing language in terms of usage among developers.</p></li>
+<li><p>Languages like <strong>C</strong>, <strong>C#</strong>, and <strong>C++</strong> remain relatively low in terms of usage, showing minimal fluctuations during the period.</p></li>
+</ul>
+<p>This data indicates a strong preference for web development technologies, with JavaScript, PHP, and Python leading the way, while systems programming languages like C and C++ are less popular in Bangladesh.</p>
+</section>
+<section id="key-observations">
+<h4>Key Observations:<a class="headerlink" href="#key-observations" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>JavaScript</strong> dominance can be attributed to its widespread use in web and mobile application development.</p></li>
+<li><p><strong>Python</strong>’s steady growth reflects its use in data science and machine learning projects, which are becoming more popular.</p></li>
+<li><p>Other languages such as <strong>Ruby</strong>, <strong>Go</strong>, and <strong>TypeScript</strong> show little to no significant change, suggesting they have a niche but stable developer base.</p></li>
+</ul>
+</section>
+</section>
+<section id="sri-lanka-number-of-pushers-per-100k-by-programming-language">
+<h3>Sri Lanka - Number of Pushers per 100k by Programming Language<a class="headerlink" href="#sri-lanka-number-of-pushers-per-100k-by-programming-language" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">languages</span> <span class="o">=</span> <span class="n">df_filtered_LK</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="c1"># type: ignore</span>
+
+<span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">languages</span><span class="p">:</span>
+    <span class="n">filtered_data_1</span> <span class="o">=</span> <span class="n">df_filtered_LK</span><span class="p">[</span><span class="n">df_filtered_LK</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">lang</span><span class="p">]</span> <span class="c1"># type: ignore</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">filtered_data_1</span><span class="p">[</span><span class="s1">&#39;year_quarter&#39;</span><span class="p">],</span> <span class="n">filtered_data_1</span><span class="p">[</span><span class="s1">&#39;num_pushers_pc&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of pushers per 100k by programming language - Sri Lanka&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of pushers per 100K&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Programming Languages&#39;</span><span class="p">)</span>
+
+<span class="n">text_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Number of periods: 17&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Number of observations: 170&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Number of programming languages: 10&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Source: GitHub Innovation Graph&#39;</span>
+<span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text_data</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+               <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p><img alt="Number of Pushers per 100k - Sri Lanka" src="_images/output_LK.png" /></p>
+<section id="id1">
+<h4>Analysis<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>This graph displays the number of pushers per 100,000 inhabitants by programming language in Sri Lanka, from Q1 2020 to Q1 2024. The key observations from this data include:</p>
+<ul class="simple">
+<li><p><strong>JavaScript</strong> shows the most significant increase over time, starting around 20 pushers per 100k and reaching nearly 70 pushers by Q1 2024. This indicates a robust and growing preference for JavaScript in Sri Lanka’s software development ecosystem.</p></li>
+<li><p><strong>PHP</strong> and <strong>Python</strong> are also popular languages, with PHP showing more fluctuations, but both languages have maintained steady growth over the years.</p></li>
+<li><p>Similar to the Bangladesh trend, <strong>C</strong>, <strong>C#</strong>, and <strong>C++</strong> remain less popular, with minimal changes in the number of pushers.</p></li>
+<li><p><strong>Go</strong> and <strong>Ruby</strong> have very little presence, maintaining a low and stable number of pushers per 100k, which suggests limited adoption in Sri Lanka.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h4>Key Observations:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The steep rise in <strong>JavaScript</strong> reflects Sri Lanka’s increased focus on web and mobile development, likely driven by a growing digital economy.</p></li>
+<li><p><strong>PHP</strong>’s fluctuations may point to its widespread but varying use in specific web development projects.</p></li>
+<li><p><strong>Python</strong>’s steady increase shows its ongoing use in data science and automation tasks, aligning with global trends in software development.</p></li>
+<li><p><strong>C</strong>, <strong>C#</strong>, and <strong>C++</strong> continue to be niche languages in Sri Lanka, focused perhaps on specific system-level applications or educational contexts.</p></li>
+</ul>
+</section>
+<section id="comparative-analysis-with-bangladesh">
+<h4>Comparative Analysis with Bangladesh:<a class="headerlink" href="#comparative-analysis-with-bangladesh" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Sri Lanka shows a more dramatic rise in <strong>JavaScript</strong> compared to Bangladesh, with a larger base of pushers per 100k.</p></li>
+<li><p><strong>Python</strong> and <strong>PHP</strong> have similar levels of growth in both countries, although Sri Lanka shows more fluctuations in <strong>PHP</strong> usage.</p></li>
+</ul>
+</section>
+</section>
+<section id="india-number-of-pushers-per-100k-by-programming-language">
+<h3>India - Number of Pushers per 100k by Programming Language<a class="headerlink" href="#india-number-of-pushers-per-100k-by-programming-language" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">languages</span> <span class="o">=</span> <span class="n">df_filtered_IN</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="c1"># type: ignore</span>
+
+<span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">languages</span><span class="p">:</span>
+    <span class="n">filtered_data_2</span> <span class="o">=</span> <span class="n">df_filtered_IN</span><span class="p">[</span><span class="n">df_filtered_IN</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">lang</span><span class="p">]</span> <span class="c1"># type: ignore</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">filtered_data_2</span><span class="p">[</span><span class="s1">&#39;year_quarter&#39;</span><span class="p">],</span> <span class="n">filtered_data_2</span><span class="p">[</span><span class="s1">&#39;num_pushers_pc&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">lang</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of pushers per 100k by programming language - India&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of pushers per 100K&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Programming Languages&#39;</span><span class="p">)</span>
+
+<span class="n">text_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Number of periods: 17&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Number of observations: 170&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Number of programming languages: 10&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Source: GitHub Innovation Graph&#39;</span>
+<span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text_data</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+               <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p><img alt="Number of Pushers per 100k - India" src="_images/output_IN.png" /></p>
+<section id="id3">
+<h4>Analysis<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>This graph presents the number of pushers per 100,000 inhabitants by programming language in India, from Q1 2020 to Q1 2024. The following insights can be drawn from the data:</p>
+<ul class="simple">
+<li><p><strong>JavaScript</strong> shows the highest growth rate, increasing from around 15 per 100k in early 2020 to over 35 per 100k by Q1 2024, underscoring its widespread adoption in India’s growing tech industry.</p></li>
+<li><p><strong>Python</strong> and <strong>PHP</strong> also show considerable growth, with Python experiencing a steady rise and PHP showing a moderate increase, indicating the increasing popularity of Python for data science and automation.</p></li>
+<li><p><strong>Java</strong> remains consistently strong, holding the second spot in popularity, reflecting its long-standing use in enterprise solutions and mobile app development, particularly in India’s large-scale IT projects.</p></li>
+<li><p><strong>C</strong>, <strong>C#</strong>, and <strong>C++</strong> continue to have a stable but smaller developer base compared to web development languages.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h4>Key Observations:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>JavaScript</strong> dominates the developer landscape, which is indicative of India’s focus on web development, startups, and mobile application ecosystems.</p></li>
+<li><p><strong>Python</strong>’s steady increase reflects the global trend of using the language for data-driven tasks and machine learning, areas where India is becoming a key global player.</p></li>
+<li><p><strong>PHP</strong> still holds importance for web-based projects, but it does not show as significant growth as JavaScript or Python.</p></li>
+<li><p>The relatively flat growth in <strong>C</strong>, <strong>C#</strong>, and <strong>C++</strong> indicates that these languages are likely being used for specialized or legacy systems rather than driving innovation in the modern tech stack.</p></li>
+</ul>
+</section>
+<section id="comparative-analysis-with-bangladesh-and-sri-lanka">
+<h4>Comparative Analysis with Bangladesh and Sri Lanka:<a class="headerlink" href="#comparative-analysis-with-bangladesh-and-sri-lanka" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>India</strong> shows significantly higher activity in all languages, particularly <strong>JavaScript</strong> and <strong>Java</strong>, compared to Bangladesh and Sri Lanka, highlighting its role as a major IT hub.</p></li>
+<li><p>While <strong>Python</strong> is also popular in Bangladesh and Sri Lanka, its growth in India is more pronounced, reflecting its broader use in advanced tech sectors such as AI and big data.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="technological-growth-and-innovation-across-south-asia-a-comparative-analysis-of-india-bangladesh-and-sri-lanka-2020-2024">
+<h2>Technological Growth and Innovation Across South Asia: A Comparative Analysis of India, Bangladesh, and Sri Lanka (2020-2024)<a class="headerlink" href="#technological-growth-and-innovation-across-south-asia-a-comparative-analysis-of-india-bangladesh-and-sri-lanka-2020-2024" title="Link to this heading">#</a></h2>
+<section id="number-of-pushes-per-100k-by-country-2020q1-2024q1">
+<h3>Number of Pushes per 100k by Country (2020Q1 - 2024Q1)<a class="headerlink" href="#number-of-pushes-per-100k-by-country-2020q1-2024q1" title="Link to this heading">#</a></h3>
+<p><img alt="Number of Pushes per 100k by Country" src="_images/output_4.png" /></p>
+<section id="id5">
+<h4>Analysis<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>This graph presents the number of Git pushes per 100,000 inhabitants by country (India, Bangladesh, and Sri Lanka) from Q1 2020 to Q1 2024. Key observations include:</p>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> exhibits the highest activity in terms of Git pushes per capita, with a significant increase, reaching over 2,500 pushes per 100k inhabitants by Q1 2024. This shows a highly active developer community that consistently contributes to repositories.</p></li>
+<li><p><strong>India</strong> maintains steady growth, with Git pushes increasing from around 500 per 100k in 2020 to over 1,000 per 100k by 2024. This reflects India’s growing base of developers and continuous contributions to code repositories.</p></li>
+<li><p><strong>Bangladesh</strong>, while starting from a lower base, shows a gradual increase in pushes, reaching around 600 per 100k by Q1 2024. Although the growth is slower compared to the other two countries, it indicates a steady expansion in developer activity.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h4>Key Observations:<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> clearly leads in terms of Git pushes per capita, which indicates that its developers are highly engaged in collaborative and open-source projects.</p></li>
+<li><p><strong>India</strong> shows a consistent upward trend, which aligns with the country’s broader role in the global software development industry, reflecting growing engagement from its developer population.</p></li>
+<li><p><strong>Bangladesh</strong> has a slower growth rate but shows steady progress, indicating that its tech ecosystem is gradually becoming more active.</p></li>
+</ul>
+</section>
+<section id="comparative-insights">
+<h4>Comparative Insights:<a class="headerlink" href="#comparative-insights" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong>’s rapid rise in Git pushes per capita suggests a strong emphasis on open-source development and collaborative projects, making it a regional leader in software contributions.</p></li>
+<li><p><strong>India</strong>’s growth, though moderate, reflects the massive scale of its developer base and consistent contributions to both local and global projects.</p></li>
+<li><p><strong>Bangladesh</strong> shows slower growth but represents an emerging tech scene, where increasing contributions suggest a positive trajectory for the country’s software development activities.</p></li>
+</ul>
+</section>
+</section>
+<section id="number-of-repositories-per-100k-by-country-2020q1-2024q1">
+<h3>Number of Repositories per 100k by Country (2020Q1 - 2024Q1)<a class="headerlink" href="#number-of-repositories-per-100k-by-country-2020q1-2024q1" title="Link to this heading">#</a></h3>
+<p><img alt="Number of Repositories per 100k by Country" src="_images/output_1.png" /></p>
+<section id="id7">
+<h4>Analysis<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>This graph shows the number of repositories per 100,000 inhabitants by country (India, Bangladesh, and Sri Lanka) from Q1 2020 to Q1 2024. The following key insights can be drawn from the data:</p>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> leads in the number of repositories per 100k inhabitants, consistently staying ahead of both India and Bangladesh. By Q1 2024, Sri Lanka has exceeded 4,000 repositories per 100k inhabitants.</p></li>
+<li><p><strong>India</strong> shows steady growth, following closely behind Sri Lanka. India’s repository creation per capita has surpassed 2,500 by Q1 2024, indicating the country’s solid and growing developer base.</p></li>
+<li><p><strong>Bangladesh</strong>, while demonstrating growth, lags behind both Sri Lanka and India. By Q1 2024, Bangladesh reaches just over 1,000 repositories per 100k inhabitants.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h4>Key Observations:<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong>’s higher number of repositories per 100k inhabitants suggests a highly active and engaged developer community relative to its population size. This could be due to a thriving tech startup ecosystem and active government support for digital initiatives.</p></li>
+<li><p><strong>India</strong> shows substantial growth in repository creation, reflecting the country’s growing importance in the global software industry, though its per capita repository count remains lower than that of Sri Lanka.</p></li>
+<li><p><strong>Bangladesh</strong>’s lower repository creation rate indicates that while the tech industry is growing, it is still developing compared to its regional counterparts.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h4>Comparative Insights:<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The data highlights <strong>Sri Lanka</strong> as an outlier in terms of repository creation per capita. Despite being smaller in population, Sri Lanka outpaces India and Bangladesh significantly.</p></li>
+<li><p><strong>India</strong>, with its much larger population, has a lower number of repositories per capita but still shows impressive growth, reflecting the scale of its developer ecosystem.</p></li>
+<li><p><strong>Bangladesh</strong>, although trailing in repository creation, is showing consistent progress, suggesting that the country’s software development sector is steadily maturing.</p></li>
+</ul>
+</section>
+</section>
+<section id="number-of-developers-per-100k-by-country-2020q1-2024q1">
+<h3>Number of Developers per 100k by Country (2020Q1 - 2024Q1)<a class="headerlink" href="#number-of-developers-per-100k-by-country-2020q1-2024q1" title="Link to this heading">#</a></h3>
+<p><img alt="Number of Developers per 100k by Country" src="_images/output_2.png" /></p>
+<section id="id10">
+<h4>Analysis<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<p>This graph displays the number of developers per 100,000 inhabitants by country (India, Bangladesh, and Sri Lanka) from Q1 2020 to Q1 2024. The key observations from the data include:</p>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> consistently has the highest number of developers per 100k inhabitants, exceeding 1,500 developers by Q1 2024. This suggests a highly active and engaged developer community relative to the country’s population.</p></li>
+<li><p><strong>India</strong> shows steady and significant growth, reaching close to 1,000 developers per 100k inhabitants by Q1 2024. This reflects India’s large and rapidly growing developer base, even though the per capita numbers remain behind Sri Lanka.</p></li>
+<li><p><strong>Bangladesh</strong>, while showing slower growth than the other two countries, has increased its number of developers per capita from just over 200 per 100k inhabitants in 2020 to over 500 by 2024. This indicates a steady expansion of the tech industry and developer population in the country.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h4>Key Observations:<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong>’s high number of developers per capita emphasizes the country’s commitment to growing its software development sector and fostering technical skills.</p></li>
+<li><p><strong>India</strong>, while showing lower numbers per capita compared to Sri Lanka, has a massive and rapidly expanding developer population, which continues to grow at a steady pace.</p></li>
+<li><p><strong>Bangladesh</strong> shows promising growth, though it still lags behind both Sri Lanka and India in terms of the number of developers per 100k inhabitants. This could be attributed to its developing tech ecosystem.</p></li>
+</ul>
+</section>
+<section id="id12">
+<h4>Comparative Insights:<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong>’s lead in developers per capita shows a robust focus on technology education and opportunities, despite its smaller population.</p></li>
+<li><p><strong>India</strong>’s steady rise highlights the country’s growing global influence in the tech industry, supported by a massive and diverse developer base.</p></li>
+<li><p><strong>Bangladesh</strong>’s growth, while slower, indicates the country is catching up, albeit at a different pace, likely due to its different economic and infrastructural context.</p></li>
+</ul>
+</section>
+</section>
+<section id="number-of-organizations-per-100k-by-country-2020q1-2024q1">
+<h3>Number of Organizations per 100k by Country (2020Q1 - 2024Q1)<a class="headerlink" href="#number-of-organizations-per-100k-by-country-2020q1-2024q1" title="Link to this heading">#</a></h3>
+<p><img alt="Number of Organizations per 100k by Country" src="_images/output_3.png" /></p>
+<section id="id13">
+<h4>Analysis<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<p>This graph shows the number of organizations per 100,000 inhabitants by country (India, Bangladesh, and Sri Lanka) from Q1 2020 to Q1 2024. The key insights from the data include:</p>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> shows the highest number of organizations per 100k inhabitants, with a steep growth from 30 in Q1 2020 to over 90 by Q1 2024. This indicates a highly active organizational base relative to its population size, likely reflecting a thriving startup ecosystem.</p></li>
+<li><p><strong>India</strong> shows steady growth, increasing from around 20 organizations per 100k in Q1 2020 to over 50 by Q1 2024. This growth reflects India’s large and expanding tech industry, with more organizations being established over time.</p></li>
+<li><p><strong>Bangladesh</strong> remains behind both Sri Lanka and India, but still shows growth, increasing from around 20 organizations per 100k to approximately 30 by Q1 2024. This suggests a more gradual growth of organizations in the tech sector compared to its regional counterparts.</p></li>
+</ul>
+</section>
+<section id="id14">
+<h4>Key Observations:<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong>’s rapid growth in organizations per capita suggests a strong support system for new tech businesses and an entrepreneurial culture that encourages the creation of new organizations.</p></li>
+<li><p><strong>India</strong>’s steady growth is consistent with its position as a global tech hub, with more organizations being formed as its tech ecosystem expands, even if the per capita numbers remain lower than Sri Lanka.</p></li>
+<li><p><strong>Bangladesh</strong> shows slower but steady growth, reflecting the development of its tech sector. While it lags behind, the increase in the number of organizations is promising for the future of tech innovation in the country.</p></li>
+</ul>
+</section>
+<section id="id15">
+<h4>Comparative Insights:<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sri Lanka</strong> continues to lead in terms of organizations per capita, suggesting a strong focus on fostering new businesses in the tech sector.</p></li>
+<li><p><strong>India</strong>’s numbers, though lower per capita than Sri Lanka, reflect its vast organizational landscape and continuous growth in tech-related industries.</p></li>
+<li><p><strong>Bangladesh</strong>’s slower pace of growth compared to the other two countries may be due to infrastructural or economic challenges, but the upward trend indicates ongoing development in its tech sector.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="licenses">
+<h2>Licenses<a class="headerlink" href="#licenses" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>This code loads a dataset of software licenses, filters it for Bangladesh, and creates a bar plot to visualize the number of “pushers” (contributors) for each license type in the country.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">licenses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/github/innovationgraph/refs/heads/main/data/licenses.csv&#39;</span><span class="p">)</span>
+<span class="n">licenses</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num_pushers</th>
+      <th>spdx_license</th>
+      <th>iso2_code</th>
+      <th>year</th>
+      <th>quarter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>738</td>
+      <td>MIT</td>
+      <td>AE</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>217</td>
+      <td>NOASSERTION</td>
+      <td>AE</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>201</td>
+      <td>Apache-2.0</td>
+      <td>AE</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>152</td>
+      <td>GPL-3.0</td>
+      <td>AE</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>182</td>
+      <td>MIT</td>
+      <td>AL</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>13860</th>
+      <td>124</td>
+      <td>GPL-2.0</td>
+      <td>ZA</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13861</th>
+      <td>123</td>
+      <td>CC0-1.0</td>
+      <td>ZA</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13862</th>
+      <td>119</td>
+      <td>Unlicense</td>
+      <td>ZA</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13863</th>
+      <td>175</td>
+      <td>MIT</td>
+      <td>ZM</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13864</th>
+      <td>242</td>
+      <td>MIT</td>
+      <td>ZW</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>13865 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Bangladesh</span> <span class="o">=</span> <span class="n">licenses</span><span class="p">[(</span><span class="n">licenses</span><span class="o">.</span><span class="n">iso2_code</span> <span class="o">==</span> <span class="s1">&#39;BD&#39;</span><span class="p">)]</span>
+<span class="n">Bangladesh</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num_pushers</th>
+      <th>spdx_license</th>
+      <th>iso2_code</th>
+      <th>year</th>
+      <th>quarter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>38</th>
+      <td>1675</td>
+      <td>MIT</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>478</td>
+      <td>GPL-3.0</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>433</td>
+      <td>Apache-2.0</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>428</td>
+      <td>NOASSERTION</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>114</td>
+      <td>GPL-2.0</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>13001</th>
+      <td>249</td>
+      <td>GPL-2.0</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13002</th>
+      <td>244</td>
+      <td>AGPL-3.0</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13003</th>
+      <td>141</td>
+      <td>Unlicense</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13004</th>
+      <td>121</td>
+      <td>BSD-3-Clause</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13005</th>
+      <td>120</td>
+      <td>CC0-1.0</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>128 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>The chart shows a clear distribution of contributors across various software licenses in Bangladesh. Some licenses, such as MIT and GPL-3.0, have a significantly higher number of contributors, while others, like Proprietary and Apache-2.0, have fewer contributors. This suggests that certain open-source licenses, such as MIT, attract more developer participation compared to others. The bars are ordered to highlight this variation, providing insight into the preferred licenses within the country.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;spdx_license&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">Bangladesh</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># Agrega ci=None</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of pushers of each licenses in Bangladesh&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;License&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Pushers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_22344\1832686797.py:2: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(x=&#39;spdx_license&#39;, y=&#39;num_pushers&#39;, data=Bangladesh, ci=None)  # Agrega ci=None
+</pre></div>
+</div>
+<img alt="_images/1f6f01c05f82cc1bc8b458cee7b4615bf810c498b7324ecc0371d430ca37637c.png" src="_images/1f6f01c05f82cc1bc8b458cee7b4615bf810c498b7324ecc0371d430ca37637c.png" />
+</div>
+</div>
+<p>We collapse specific software licenses into a new category called “Other Licenses” for each year and quarter in Bangladesh’s dataset. It first defines a list of licenses to collapse. Then, for each unique combination of year and quarter, it sums the number of contributors for the selected licenses (licenses_to_collapse) and adds the total to the “Other Licenses” category. If “Other Licenses” already exists for that year and quarter, the number of contributors is updated. If not, a new row is added for “Other Licenses.” Finally, the original dataset is updated by removing the collapsed licenses.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">licenses_to_collapse</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GPL-2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;CC0-1.0&#39;</span><span class="p">,</span> <span class="s1">&#39;Unlicense&#39;</span><span class="p">,</span> <span class="s1">&#39;AGPL-3.0&#39;</span><span class="p">,</span> <span class="s1">&#39;BSD-3-Clause&#39;</span><span class="p">,</span> <span class="s1">&#39;MPL-2.0&#39;</span><span class="p">]</span>
+
+
+<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">quarter</span> <span class="ow">in</span> <span class="n">Bangladesh</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;quarter&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+
+    <span class="n">collapsed_pushers</span> <span class="o">=</span> <span class="n">Bangladesh</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;spdx_license&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">licenses_to_collapse</span><span class="p">))</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">)</span>
+    <span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+   
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Bangladesh</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;spdx_license&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Other Licenses&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">)</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="n">Bangladesh</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;spdx_license&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Other Licenses&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+            <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+            <span class="p">(</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">),</span>
+            <span class="s1">&#39;num_pushers&#39;</span>
+        <span class="p">]</span> <span class="o">+=</span> <span class="n">collapsed_pushers</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Bangladesh</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
+            <span class="n">Bangladesh</span><span class="p">,</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+                <span class="s1">&#39;num_pushers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">collapsed_pushers</span><span class="p">],</span>
+                <span class="s1">&#39;spdx_license&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Other Licenses&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;iso2_code&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">year</span><span class="p">],</span>
+                <span class="s1">&#39;quarter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">quarter</span><span class="p">]</span>
+            <span class="p">})</span>
+        <span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">Bangladesh</span> <span class="o">=</span> <span class="n">Bangladesh</span><span class="p">[</span><span class="o">~</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;spdx_license&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">licenses_to_collapse</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Here we’ve selected five groups depending to the licenses.</p>
+<ul class="simple">
+<li><p>MIT License</p></li>
+<li><p>Apache license</p></li>
+<li><p>GPL 3.0</p></li>
+<li><p>NOASSERTION</p></li>
+<li><p>Others licenses</p></li>
+</ul>
+<p>The chart shows the number of contributors for each software license in Bangladesh, with several licenses collapsed into the “Other Licenses” category. The “Other Licenses” category now represents a significant portion of the contributions, while licenses like MIT and GPL-3.0 still have the most contributors.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;spdx_license&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">Bangladesh</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># Agrega ci=None</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of pushers for each License in Bangladesh&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;License&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Pushers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_22344\826828057.py:2: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(x=&#39;spdx_license&#39;, y=&#39;num_pushers&#39;, data=Bangladesh, ci=None)  # Agrega ci=None
+</pre></div>
+</div>
+<img alt="_images/99cb5774bb9c9b3689bc0925545487c3db7ccc79ddad3e3eb984ed9e5fd0fb60.png" src="_images/99cb5774bb9c9b3689bc0925545487c3db7ccc79ddad3e3eb984ed9e5fd0fb60.png" />
+</div>
+</div>
+<p>The plot shows the number of contributors for specific software licenses over time in Bangladesh. It focuses on five categories: MIT, GPL-3.0, Apache-2.0, NOASSERTION, and Other Licenses. The x-axis represents time (quarters), and the y-axis shows the number of contributors. Each line corresponds to a different license, with variations in the number of contributors across different periods, highlighting trends and fluctuations for each license type over time.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MIT&#39;</span><span class="p">,</span> <span class="s1">&#39;GPL-3.0&#39;</span><span class="p">,</span> <span class="s1">&#39;Apache-2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;NOASSERTION&#39;</span><span class="p">,</span> <span class="s1">&#39;Other Licenses&#39;</span><span class="p">]</span>
+<span class="n">filtered_data</span> <span class="o">=</span> <span class="n">Bangladesh</span><span class="p">[</span><span class="n">Bangladesh</span><span class="p">[</span><span class="s1">&#39;spdx_license&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">categories</span><span class="p">)]</span>
+
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;quarter&#39;</span><span class="p">,</span> <span class="s1">&#39;spdx_license&#39;</span><span class="p">])[</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">grouped_data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">grouped_data</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span>  <span class="s2">&quot;-Q&quot;</span> <span class="o">+</span> <span class="n">grouped_data</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="n">pivot_data</span> <span class="o">=</span> <span class="n">grouped_data</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;spdx_license&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">pivot_data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pivot_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">pivot_data</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">column</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Number of Pushers for each License a lo Largo del Tiempo&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Quarter&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of Pushers&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Type of License&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/c3300457a46f0299d946980fd73b907ad19cf8dd4c6727dcac0d1ff3f7543f54.png" src="_images/c3300457a46f0299d946980fd73b907ad19cf8dd4c6727dcac0d1ff3f7543f54.png" />
+</div>
+</div>
+</section>
+<section id="topics">
+<h2>Topics<a class="headerlink" href="#topics" title="Link to this heading">#</a></h2>
+<p>The code loads a dataset containing topics related to software development, filters the data for Bangladesh (iso2_code = ‘BD’), and displays the relevant information for that country. The resulting dataset bgd contains all topics associated with Bangladesh.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/github/innovationgraph/refs/heads/main/data/topics.csv&#39;</span><span class="p">)</span>
+<span class="n">topics</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num_pushers</th>
+      <th>topic</th>
+      <th>iso2_code</th>
+      <th>year</th>
+      <th>quarter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7206</td>
+      <td>python</td>
+      <td>EU</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6739</td>
+      <td>python</td>
+      <td>US</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5231</td>
+      <td>javascript</td>
+      <td>EU</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5025</td>
+      <td>javascript</td>
+      <td>US</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3874</td>
+      <td>java</td>
+      <td>EU</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51329</th>
+      <td>101</td>
+      <td>datascience</td>
+      <td>US</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51330</th>
+      <td>101</td>
+      <td>zshrc</td>
+      <td>US</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51331</th>
+      <td>101</td>
+      <td>web-application</td>
+      <td>US</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51332</th>
+      <td>101</td>
+      <td>reproducibility</td>
+      <td>US</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51333</th>
+      <td>101</td>
+      <td>csharp</td>
+      <td>VN</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>51334 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bgd</span> <span class="o">=</span> <span class="n">topics</span><span class="p">[(</span><span class="n">topics</span><span class="o">.</span><span class="n">iso2_code</span> <span class="o">==</span> <span class="s1">&#39;BD&#39;</span><span class="p">)]</span>
+<span class="n">bgd</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num_pushers</th>
+      <th>topic</th>
+      <th>iso2_code</th>
+      <th>year</th>
+      <th>quarter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1110</th>
+      <td>145</td>
+      <td>javascript</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1282</th>
+      <td>129</td>
+      <td>python</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1760</th>
+      <td>102</td>
+      <td>php</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2636</th>
+      <td>211</td>
+      <td>javascript</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3017</th>
+      <td>157</td>
+      <td>python</td>
+      <td>BD</td>
+      <td>2020</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>50822</th>
+      <td>113</td>
+      <td>django</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51152</th>
+      <td>104</td>
+      <td>mysql</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51199</th>
+      <td>103</td>
+      <td>machine-learning</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51280</th>
+      <td>101</td>
+      <td>redux-toolkit</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51281</th>
+      <td>101</td>
+      <td>redux</td>
+      <td>BD</td>
+      <td>2024</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>429 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>The bar plot shows the distribution of contributors across different software development topics in Bangladesh. The x-axis represents various topics, while the y-axis indicates the number of contributors for each topic. The chart highlights which topics have the highest and lowest number of contributors, providing insights into the areas of focus for developers in Bangladesh.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;topic&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bgd</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of pushers of each Topic in Bangladesh&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Topic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Pushers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_22344\589903753.py:2: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(x=&#39;topic&#39;, y=&#39;num_pushers&#39;, data=bgd, ci=None)  # Agrega ci=None
+</pre></div>
+</div>
+<img alt="_images/d1d55011689845c6de9b0bcbb4eff31f00fb5a288d3973b437acb799910a0038.png" src="_images/d1d55011689845c6de9b0bcbb4eff31f00fb5a288d3973b437acb799910a0038.png" />
+</div>
+</div>
+<p>The process aggregates contributors for the “Python 3” topic into the “python” topic by summing the contributors for each year and quarter. The total number of contributors for “Python 3” is added to “python”, and then the “Python 3” entries are removed from the dataset. Finally, the total number of contributors for “python” is calculated and printed after the aggregation, ensuring that both “Python” and “Python 3” are combined into one category.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">quarter</span> <span class="ow">in</span> <span class="n">bgd</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;quarter&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+    <span class="n">python3_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Python 3&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">)</span>
+    <span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="n">bgd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;python&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">),</span>
+        <span class="s1">&#39;num_pushers&#39;</span>
+    <span class="p">]</span> <span class="o">+=</span> <span class="n">python3_pushers</span>
+
+<span class="n">bgd</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Python 3&#39;</span><span class="p">]</span>
+
+<span class="n">python_total_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;python&#39;</span><span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total de pushers para &#39;python&#39; después de colapsar: </span><span class="si">{</span><span class="n">python_total_pushers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total de pushers para &#39;python&#39; después de colapsar: 4318
+</pre></div>
+</div>
+</div>
+</div>
+<p>The process aggregates contributors for the “react-router” and “reactjs” topics into the “react” topic for each year and quarter. The number of contributors for both “react-router” and “reactjs” is summed and added to the corresponding “react” topic. After this, the entries for “react-router” and “reactjs” are removed from the dataset. Finally, the total number of contributors for the “react” topic is calculated and printed after the aggregation, merging all related topics under “react.”</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">quarter</span> <span class="ow">in</span> <span class="n">bgd</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;quarter&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+    <span class="n">react_router_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;react-router&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">)</span>
+    <span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="n">reactjs_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;reactjs&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">)</span>
+    <span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+
+    <span class="n">bgd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;react&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">),</span>
+        <span class="s1">&#39;num_pushers&#39;</span>
+    <span class="p">]</span> <span class="o">+=</span> <span class="n">react_router_pushers</span> <span class="o">+</span> <span class="n">reactjs_pushers</span>
+
+<span class="n">bgd</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="o">~</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;react-router&#39;</span><span class="p">,</span> <span class="s1">&#39;reactjs&#39;</span><span class="p">])]</span>
+
+<span class="n">react_total_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;react&#39;</span><span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total de pushers para &#39;react&#39; después de colapsar: </span><span class="si">{</span><span class="n">react_total_pushers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total de pushers para &#39;react&#39; después de colapsar: 12867
+</pre></div>
+</div>
+</div>
+</div>
+<p>The process aggregates contributors for the “tailwind-css” topic into the “tailwindcss” topic for each year and quarter. The number of contributors for “tailwind-css” is summed and added to the corresponding “tailwindcss” topic. Afterward, the “tailwind-css” entries are removed from the dataset. Finally, the total number of contributors for the “tailwindcss” topic is calculated and printed after the aggregation, consolidating both “tailwind-css” and “tailwindcss” under one category.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">quarter</span> <span class="ow">in</span> <span class="n">bgd</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;quarter&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+    <span class="n">tailwind_css_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;tailwind-css&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">)</span>
+    <span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="n">bgd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;tailwindcss&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">),</span>
+        <span class="s1">&#39;num_pushers&#39;</span>
+    <span class="p">]</span> <span class="o">+=</span> <span class="n">tailwind_css_pushers</span>
+
+<span class="n">bgd</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;tailwind-css&#39;</span><span class="p">]</span>
+
+<span class="n">tailwindcss_total_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;tailwindcss&#39;</span><span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total de pushers para &#39;tailwindcss&#39; después de colapsar: </span><span class="si">{</span><span class="n">tailwindcss_total_pushers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total de pushers para &#39;tailwindcss&#39; después de colapsar: 3694
+</pre></div>
+</div>
+</div>
+</div>
+<p>The process aggregates contributors for the “firebase-auth” topic into the “firebase” topic for each year and quarter. The total number of contributors for “firebase-auth” is summed and added to the corresponding “firebase” topic. After this, the entries for “firebase-auth” are removed from the dataset. Finally, the total number of contributors for the “firebase” topic is calculated and printed after the aggregation, combining the contributions for both “firebase” and “firebase-auth” under the “firebase” category.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">quarter</span> <span class="ow">in</span> <span class="n">bgd</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;quarter&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+    <span class="n">firebase_auth_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;firebase-auth&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">)</span>
+    <span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="n">bgd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;firebase&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;quarter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">quarter</span><span class="p">),</span>
+        <span class="s1">&#39;num_pushers&#39;</span>
+    <span class="p">]</span> <span class="o">+=</span> <span class="n">firebase_auth_pushers</span>
+
+<span class="n">bgd</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;firebase-auth&#39;</span><span class="p">]</span>
+
+<span class="n">firebase_total_pushers</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;firebase&#39;</span><span class="p">][</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total de pushers para &#39;firebase&#39; después de colapsar: </span><span class="si">{</span><span class="n">firebase_total_pushers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total de pushers para &#39;firebase&#39; después de colapsar: 2619
+</pre></div>
+</div>
+</div>
+</div>
+<p>The bar plot displays the number of contributors (“pushers”) for each selected topic in Bangladesh. The x-axis represents various topics, including python, react, tailwindcss, github-config, config, firebase, and machine-learning, while the y-axis shows the number of contributors for each topic. The chart highlights which topics have the most active contributors, with python and react showing higher participation compared to others, indicating their popularity in Bangladesh’s developer community.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Filtrar los datos para las categorías seleccionadas</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;react&#39;</span><span class="p">,</span> <span class="s1">&#39;tailwindcss&#39;</span><span class="p">,</span> <span class="s1">&#39;github-config&#39;</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;firebase&#39;</span><span class="p">,</span> <span class="s1">&#39;machine-learning&#39;</span><span class="p">]</span>
+<span class="n">filtered_data_bar</span> <span class="o">=</span> <span class="n">bgd</span><span class="p">[</span><span class="n">bgd</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">categories</span><span class="p">)]</span>
+
+<span class="c1"># Crear el gráfico de barras</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;topic&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;num_pushers&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">filtered_data_bar</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of Pushers for each Topic in Bangladesh&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Topic&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Pushers&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_22344\2290340867.py:10: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(x=&#39;topic&#39;, y=&#39;num_pushers&#39;, data=filtered_data_bar, ci=None)
+</pre></div>
+</div>
+<img alt="_images/d49c870b236cb68eb39ad13c38dae2c32c47a1893d0c24411f3ef21c8f73929c.png" src="_images/d49c870b236cb68eb39ad13c38dae2c32c47a1893d0c24411f3ef21c8f73929c.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="maps.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Demographic Data: Density and Land Development</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Googletrends.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Google Trends about the Crisis in Bangladesh</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-overview">Project Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">Data Collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-of-analysis">Units of Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-metrics-analyzed">Key Metrics Analyzed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#developer-activity">1. Developer Activity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-growth">2. Repository Growth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pushes">3. Git Pushes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organizations">4. Organizations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-languages">5. Programming Languages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-data-insights">Visual Data Insights</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-language-adoption-trends-in-south-asia-a-comparative-study-of-pushers-activity-in-bangladesh-sri-lanka-and-india-2020-2024">Programming Language Adoption Trends in South Asia: A Comparative Study of Pushers Activity in Bangladesh, Sri Lanka, and India (2020-2024)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bangladesh-number-of-pushers-per-100k-by-programming-language">Bangladesh - Number of Pushers per 100k by Programming Language</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-observations">Key Observations:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sri-lanka-number-of-pushers-per-100k-by-programming-language">Sri Lanka - Number of Pushers per 100k by Programming Language</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-analysis-with-bangladesh">Comparative Analysis with Bangladesh:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#india-number-of-pushers-per-100k-by-programming-language">India - Number of Pushers per 100k by Programming Language</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-analysis-with-bangladesh-and-sri-lanka">Comparative Analysis with Bangladesh and Sri Lanka:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technological-growth-and-innovation-across-south-asia-a-comparative-analysis-of-india-bangladesh-and-sri-lanka-2020-2024">Technological Growth and Innovation Across South Asia: A Comparative Analysis of India, Bangladesh, and Sri Lanka (2020-2024)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-pushes-per-100k-by-country-2020q1-2024q1">Number of Pushes per 100k by Country (2020Q1 - 2024Q1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-insights">Comparative Insights:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-repositories-per-100k-by-country-2020q1-2024q1">Number of Repositories per 100k by Country (2020Q1 - 2024Q1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Comparative Insights:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-developers-per-100k-by-country-2020q1-2024q1">Number of Developers per 100k by Country (2020Q1 - 2024Q1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Comparative Insights:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-organizations-per-100k-by-country-2020q1-2024q1">Number of Organizations per 100k by Country (2020Q1 - 2024Q1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Key Observations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Comparative Insights:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licenses">Licenses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics">Topics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
