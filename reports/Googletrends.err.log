@@ -38,8 +38,8 @@ for dicts in [forex_terms, deval_terms, price_terms, disaster_terms, conflict_te
 ------------------
 
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mHttpError[0m                                 Traceback (most recent call last)
+[1;31m--------------------------[0m
+[1;31mHttpError[0mTraceback (most recent call last)
 Cell [1;32mIn[7], line 14[0m
 [0;32m      6[0m [38;5;28;01mfor[39;00m term [38;5;129;01min[39;00m lis:
 [0;32m      7[0m     filters [38;5;241m=[39m {
