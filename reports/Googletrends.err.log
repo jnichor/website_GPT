@@ -1,15 +1,4 @@
 Traceback (most recent call last):
-  File "C:\PYTHON\Python39\lib\site-packages\nbclient\client.py", line 782, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "C:\Users\ronco\AppData\Roaming\Python\Python39\site-packages\jupyter_core\utils\__init__.py", line 182, in ensure_async
-    result = await obj
-  File "C:\PYTHON\Python39\lib\site-packages\jupyter_client\channels.py", line 230, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "C:\PYTHON\Python39\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
   File "C:\PYTHON\Python39\lib\site-packages\nbclient\client.py", line 1314, in execute
@@ -20,18 +9,64 @@ Traceback (most recent call last):
     return future.result()
   File "C:\PYTHON\Python39\lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "C:\PYTHON\Python39\lib\site-packages\nbclient\client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "C:\PYTHON\Python39\lib\site-packages\nbclient\client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-  File "C:\PYTHON\Python39\lib\site-packages\nbclient\client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['df = pd.DataFrame()', '', 'for dicts in [forex_terms, deval_terms, price_terms, disaster_terms, conflict_terms, other_terms]:', '', '    for topic, lis in dicts.items():']
-...
-["            df_ = pd.DataFrame(r['lines'][0]['points'])", "            df_['term'] = term", "            df_['topic'] = topic", '', '            df = pd.concat([df, df_])']
--------------------
+  File "C:\PYTHON\Python39\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\PYTHON\Python39\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+df = pd.DataFrame()
+
+for dicts in [forex_terms, deval_terms, price_terms, disaster_terms, conflict_terms, other_terms]:
+
+    for topic, lis in dicts.items():
+        for term in lis:
+            filters = {
+                        'terms': term,
+                        'restrictions_geo': "BD", 
+                        'restrictions_startDate': "2024-01", 
+                        'restrictions_endDate' : "2024-10" 
+                    }
+
+            r = google.get('getGraph', filters)
+
+            df_ = pd.DataFrame(r['lines'][0]['points'])
+            df_['term'] = term
+            df_['topic'] = topic
+
+            df = pd.concat([df, df_])
+------------------
+
+
+[1;31m----------------------------------------------[0m
+[1;31mHttpError[0m    Traceback (most recent call last)
+Cell [1;32mIn[6], line 14[0m
+[0;32m      6[0m [38;5;28;01mfor[39;00m term [38;5;129;01min[39;00m lis:
+[0;32m      7[0m     filters [38;5;241m=[39m {
+[0;32m      8[0m                 [38;5;124m'[39m[38;5;124mterms[39m[38;5;124m'[39m: term,
+[0;32m      9[0m                 [38;5;124m'[39m[38;5;124mrestrictions_geo[39m[38;5;124m'[39m: [38;5;124m"[39m[38;5;124mBD[39m[38;5;124m"[39m, 
+[0;32m     10[0m                 [38;5;124m'[39m[38;5;124mrestrictions_startDate[39m[38;5;124m'[39m: [38;5;124m"[39m[38;5;124m2024-01[39m[38;5;124m"[39m, 
+[0;32m     11[0m                 [38;5;124m'[39m[38;5;124mrestrictions_endDate[39m[38;5;124m'[39m : [38;5;124m"[39m[38;5;124m2024-10[39m[38;5;124m"[39m 
+[0;32m     12[0m             }
+[1;32m---> 14[0m     r [38;5;241m=[39m [43mgoogle[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mgetGraph[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mfilters[49m[43m)[49m
+[0;32m     16[0m     df_ [38;5;241m=[39m pd[38;5;241m.[39mDataFrame(r[[38;5;124m'[39m[38;5;124mlines[39m[38;5;124m'[39m][[38;5;241m0[39m][[38;5;124m'[39m[38;5;124mpoints[39m[38;5;124m'[39m])
+[0;32m     17[0m     df_[[38;5;124m'[39m[38;5;124mterm[39m[38;5;124m'[39m] [38;5;241m=[39m term
+
+Cell [1;32mIn[3], line 25[0m, in [0;36mGoogle.get[1;34m(self, method, params)[0m
+[0;32m     23[0m [38;5;28;01mdef[39;00m [38;5;21mget[39m([38;5;28mself[39m, method, params):
+[0;32m     24[0m [38;5;250m    [39m[38;5;124;03m"""Get result from Google API method"""[39;00m
+[1;32m---> 25[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mgetattr[39;49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mservice[49m[43m,[49m[43m [49m[43mmethod[49m[43m)[49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mparams[49m[43m)[49m[38;5;241;43m.[39;49m[43mexecute[49m[43m([49m[43m)[49m
+
+File [1;32mC:\PYTHON\Python39\lib\site-packages\googleapiclient\_helpers.py:130[0m, in [0;36mpositional.<locals>.positional_decorator.<locals>.positional_wrapper[1;34m(*args, **kwargs)[0m
+[0;32m    128[0m     [38;5;28;01melif[39;00m positional_parameters_enforcement [38;5;241m==[39m POSITIONAL_WARNING:
+[0;32m    129[0m         logger[38;5;241m.[39mwarning(message)
+[1;32m--> 130[0m [38;5;28;01mreturn[39;00m wrapped([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [1;32mC:\PYTHON\Python39\lib\site-packages\googleapiclient\http.py:938[0m, in [0;36mHttpRequest.execute[1;34m(self, http, num_retries)[0m
+[0;32m    936[0m     callback(resp)
+[0;32m    937[0m [38;5;28;01mif[39;00m resp[38;5;241m.[39mstatus [38;5;241m>[39m[38;5;241m=[39m [38;5;241m300[39m:
+[1;32m--> 938[0m     [38;5;28;01mraise[39;00m HttpError(resp, content, uri[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39muri)
+[0;32m    939[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mpostproc(resp, content)
+
+[1;31mHttpError[0m: <HttpError 403 when requesting https://www.googleapis.com/trends/v1beta/graph?terms=bangladeshi+immigration&restrictions.geo=BD&restrictions.startDate=2024-01&restrictions.endDate=2024-10&alt=json returned "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.". Details: "[{'message': "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.", 'domain': 'global', 'reason': 'forbidden'}]">
 

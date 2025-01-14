@@ -437,7 +437,7 @@ Note: you may need to restart the kernel to use updated packages.
 <span class="sd">    For more information, please see https://developers.google.com/apis-explorer</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">TOKEN</span> <span class="o">=</span> <span class="n">token</span> <span class="k">if</span> <span class="n">token</span> <span class="k">else</span> <span class="s2">&quot;AIzaSyBzeN1PhwWOH0iamVLB4LC3imX0cNwQrSs&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">TOKEN</span> <span class="o">=</span> <span class="n">token</span> <span class="k">if</span> <span class="n">token</span> <span class="k">else</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;GOOGLE_API_KEY&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_service</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
@@ -560,8 +560,8 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">----------------------------------------------</span>
+<span class="ne">HttpError</span><span class="g g-Whitespace">    </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">lis</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">filters</span> <span class="o">=</span> <span class="p">{</span>
@@ -584,100 +584,13 @@ Note: you may need to restart the kernel to use updated packages.
 <span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">130</span> <span class="k">return</span> <span class="n">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\http.py:923,</span> in <span class="ni">HttpRequest.execute</span><span class="nt">(self, http, num_retries)</span>
-<span class="g g-Whitespace">    </span><span class="mi">920</span>     <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;content-length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">922</span> <span class="c1"># Handle retries for server-side errors.</span>
-<span class="ne">--&gt; </span><span class="mi">923</span> <span class="n">resp</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">_retry_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">924</span>     <span class="n">http</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">925</span>     <span class="n">num_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">926</span>     <span class="s2">&quot;request&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sleep</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">928</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_rand</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">929</span>     <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uri</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="n">method</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">931</span>     <span class="n">body</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">932</span>     <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">933</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_callbacks</span><span class="p">:</span>
+<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\http.py:938,</span> in <span class="ni">HttpRequest.execute</span><span class="nt">(self, http, num_retries)</span>
 <span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">callback</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span> <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status</span> <span class="o">&gt;=</span> <span class="mi">300</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">938</span>     <span class="k">raise</span> <span class="n">HttpError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uri</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">939</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">postproc</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
 
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\http.py:191,</span> in <span class="ni">_retry_request</span><span class="nt">(http, num_retries, req_type, sleep, rand, uri, method, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span>     <span class="n">exception</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">191</span>     <span class="n">resp</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="c1"># Retry on SSL errors and socket timeout errors.</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="k">except</span> <span class="n">_ssl_SSLError</span> <span class="k">as</span> <span class="n">ssl_error</span><span class="p">:</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\httplib2\__init__.py:1724,</span> in <span class="ni">Http.request</span><span class="nt">(self, uri, method, body, headers, redirections, connection_type)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1722</span>             <span class="n">content</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1723</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1724</span>             <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1725</span>                 <span class="n">conn</span><span class="p">,</span> <span class="n">authority</span><span class="p">,</span> <span class="n">uri</span><span class="p">,</span> <span class="n">request_uri</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">redirections</span><span class="p">,</span> <span class="n">cachekey</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1726</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1727</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1728</span>     <span class="n">is_timeout</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\httplib2\__init__.py:1444,</span> in <span class="ni">Http._request</span><span class="nt">(self, conn, host, absolute_uri, request_uri, method, body, headers, redirections, cachekey)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="k">if</span> <span class="n">auth</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1442</span>     <span class="n">auth</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">request_uri</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1444</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conn_request</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">request_uri</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1446</span> <span class="k">if</span> <span class="n">auth</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1447</span>     <span class="k">if</span> <span class="n">auth</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">body</span><span class="p">):</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\httplib2\__init__.py:1396,</span> in <span class="ni">Http._conn_request</span><span class="nt">(self, conn, request_uri, method, body, headers)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1394</span>     <span class="k">pass</span>
-<span class="g g-Whitespace">   </span><span class="mi">1395</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1396</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1397</span> <span class="k">except</span> <span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">BadStatusLine</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">ResponseNotReady</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1398</span>     <span class="c1"># If we get a BadStatusLine on the first try then that means</span>
-<span class="g g-Whitespace">   </span><span class="mi">1399</span>     <span class="c1"># the connection just went stale, so retry regardless of the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1400</span>     <span class="c1"># number of RETRIES set.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1401</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">seen_bad_status_line</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\http\client.py:1377,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1375</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1376</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1377</span>         <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1378</span>     <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1379</span>         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\http\client.py:320,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span> <span class="c1"># read until we get a non-100 response</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">320</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="k">break</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\http\client.py:281,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="k">def</span> <span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">281</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span>         <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\ssl.py:1242,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1241</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1242</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1243</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1244</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\ssl.py:1100,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1100</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1102</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<span class="ne">HttpError</span>: &lt;HttpError 403 when requesting https://www.googleapis.com/trends/v1beta/graph?terms=bangladeshi+immigration&amp;restrictions.geo=BD&amp;restrictions.startDate=2024-01&amp;restrictions.endDate=2024-10&amp;alt=json returned &quot;Method doesn&#39;t allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.&quot;. Details: &quot;[{&#39;message&#39;: &quot;Method doesn&#39;t allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.&quot;, &#39;domain&#39;: &#39;global&#39;, &#39;reason&#39;: &#39;forbidden&#39;}]&quot;&gt;
 </pre></div>
 </div>
 </div>
