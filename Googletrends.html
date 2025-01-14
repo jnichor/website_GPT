@@ -391,7 +391,6 @@
 <span class="kn">from</span> <span class="nn">googleapiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
 <span class="kn">from</span> <span class="nn">googleapiclient.http</span> <span class="kn">import</span> <span class="n">HttpError</span>
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\ronco\Desktop\Asistente de Investigacion&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">credentials</span> <span class="kn">import</span> <span class="n">get_key</span>
 </pre></div>
 </div>
@@ -399,31 +398,24 @@
 </details>
 </div>
 <p>We ensure API connection</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">googleapiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">service</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="s1">&#39;trends&#39;</span><span class="p">,</span> <span class="s1">&#39;v1beta&#39;</span><span class="p">,</span> <span class="n">static_discovery</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">developerKey</span><span class="o">=</span><span class="s2">&quot;AIzaSyBdmNHiX2-i7CBX2b60cx9PsSX6OpRpjII&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Servicio creado correctamente:&quot;</span><span class="p">,</span> <span class="n">service</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error al crear el servicio:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error al crear el servicio: &lt;HttpError 400 when requesting https://www.googleapis.com/discovery/v1/apis/trends/v1beta/rest?key=AIzaSyBdmNHiX2-i7CBX2b60cx9PsSX6OpRpjII returned &quot;API key expired. Please renew the API key.&quot;. Details: &quot;[{&#39;@type&#39;: &#39;type.googleapis.com/google.rpc.ErrorInfo&#39;, &#39;reason&#39;: &#39;API_KEY_INVALID&#39;, &#39;domain&#39;: &#39;googleapis.com&#39;, &#39;metadata&#39;: {&#39;service&#39;: &#39;trends.googleapis.com&#39;}}, {&#39;@type&#39;: &#39;type.googleapis.com/google.rpc.LocalizedMessage&#39;, &#39;locale&#39;: &#39;en-US&#39;, &#39;message&#39;: &#39;API key expired. Please renew the API key.&#39;}]&quot;&gt;
-</pre></div>
-</div>
-</div>
-</div>
 <p>The general purpose of this code is to provide a Google class that acts as a wrapper to interact with the Google API, specifically designed to perform authentication and GET requests to the Google Trends service. It allows accessing API methods, such as <strong>getGraph</strong> and <strong>getTimelinesForHealth</strong>, processing the data obtained in JSON format, converting them into a DataFrame with the <strong>pandas</strong> library and exporting them as CSV files for easy analysis. In addition, it includes functionalities to handle authentication through an API token and encapsulates the API interaction logic to simplify its use in custom applications.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">dotenv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dotenv in c:\python\python39\lib\site-packages (1.0.1)
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 24.2 -&gt; 24.3.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -445,7 +437,7 @@
 <span class="sd">    For more information, please see https://developers.google.com/apis-explorer</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">TOKEN</span> <span class="o">=</span> <span class="n">token</span> <span class="k">if</span> <span class="n">token</span> <span class="k">else</span> <span class="s2">&quot;AIzaSyBdmNHiX2-i7CBX2b60cx9PsSX6OpRpjII&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">TOKEN</span> <span class="o">=</span> <span class="n">token</span> <span class="k">if</span> <span class="n">token</span> <span class="k">else</span> <span class="s2">&quot;AIzaSyBzeN1PhwWOH0iamVLB4LC3imX0cNwQrSs&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_service</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
@@ -472,19 +464,6 @@
         <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">+</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">.csv&quot;</span>
 
         <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">google</span> <span class="o">=</span> <span class="n">Google</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;AIzaSyBdmNHiX2-i7CBX2b60cx9PsSX6OpRpjII&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -582,8 +561,8 @@
 </details>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HttpError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">lis</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">filters</span> <span class="o">=</span> <span class="p">{</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span>                 <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="n">term</span><span class="p">,</span>
@@ -600,67 +579,105 @@
 <span class="g g-Whitespace">     </span><span class="mi">24</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Get result from Google API method&quot;&quot;&quot;</span>
 <span class="ne">---&gt; </span><span class="mi">25</span>     <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">service</span><span class="p">,</span> <span class="n">method</span><span class="p">)(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
 
-<span class="nn">Cell In[3], line 21,</span> in <span class="ni">Google.service</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="nd">@property</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">def</span> <span class="nf">service</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Authenticate and instantiate Google API service&quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">21</span>     <span class="k">return</span> <span class="n">build</span><span class="p">(</span><span class="s1">&#39;trends&#39;</span><span class="p">,</span> <span class="s1">&#39;v1beta&#39;</span><span class="p">,</span> <span class="n">static_discovery</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">developerKey</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">TOKEN</span><span class="p">)</span>
-
 <span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\_helpers.py:130,</span> in <span class="ni">positional.&lt;locals&gt;.positional_decorator.&lt;locals&gt;.positional_wrapper</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">elif</span> <span class="n">positional_parameters_enforcement</span> <span class="o">==</span> <span class="n">POSITIONAL_WARNING</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">130</span> <span class="k">return</span> <span class="n">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\discovery.py:333,</span> in <span class="ni">build</span><span class="nt">(serviceName, version, http, discoveryServiceUrl, developerKey, model, requestBuilder, credentials, cache_discovery, cache, client_options, adc_cert_path, adc_key_path, num_retries, static_discovery, always_use_jwt_access)</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>             <span class="k">continue</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">333</span>             <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span> <span class="c1"># If discovery_http was created by this function, we are done with it</span>
-<span class="g g-Whitespace">    </span><span class="mi">336</span> <span class="c1"># and can safely close it</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="k">if</span> <span class="n">http</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\discovery.py:304,</span> in <span class="ni">build</span><span class="nt">(serviceName, version, http, discoveryServiceUrl, developerKey, model, requestBuilder, credentials, cache_discovery, cache, client_options, adc_cert_path, adc_key_path, num_retries, static_discovery, always_use_jwt_access)</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="n">requested_url</span> <span class="o">=</span> <span class="n">uritemplate</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">discovery_url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">304</span>     <span class="n">content</span> <span class="o">=</span> <span class="n">_retrieve_discovery_doc</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="n">requested_url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="n">discovery_http</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="n">cache_discovery</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="n">serviceName</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>         <span class="n">cache</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span>         <span class="n">developerKey</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span>         <span class="n">num_retries</span><span class="o">=</span><span class="n">num_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="n">static_discovery</span><span class="o">=</span><span class="n">static_discovery</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="n">service</span> <span class="o">=</span> <span class="n">build_from_document</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span>         <span class="n">content</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span>         <span class="n">base</span><span class="o">=</span><span class="n">discovery_url</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>         <span class="n">always_use_jwt_access</span><span class="o">=</span><span class="n">always_use_jwt_access</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="k">break</span>  <span class="c1"># exit if a service was created</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\discovery.py:439,</span> in <span class="ni">_retrieve_discovery_doc</span><span class="nt">(url, http, cache_discovery, serviceName, version, cache, developerKey, num_retries, static_discovery)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="c1"># Execute this request with retries build into HttpRequest</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="c1"># Note that it will already raise an error if we don&#39;t get a 2xx response</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="n">req</span> <span class="o">=</span> <span class="n">HttpRequest</span><span class="p">(</span><span class="n">http</span><span class="p">,</span> <span class="n">HttpRequest</span><span class="o">.</span><span class="n">null_postproc</span><span class="p">,</span> <span class="n">actual_url</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">439</span> <span class="n">resp</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">num_retries</span><span class="o">=</span><span class="n">num_retries</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\_helpers.py:130,</span> in <span class="ni">positional.&lt;locals&gt;.positional_decorator.&lt;locals&gt;.positional_wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">elif</span> <span class="n">positional_parameters_enforcement</span> <span class="o">==</span> <span class="n">POSITIONAL_WARNING</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">130</span> <span class="k">return</span> <span class="n">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\http.py:938,</span> in <span class="ni">HttpRequest.execute</span><span class="nt">(self, http, num_retries)</span>
+<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\http.py:923,</span> in <span class="ni">HttpRequest.execute</span><span class="nt">(self, http, num_retries)</span>
+<span class="g g-Whitespace">    </span><span class="mi">920</span>     <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;content-length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">922</span> <span class="c1"># Handle retries for server-side errors.</span>
+<span class="ne">--&gt; </span><span class="mi">923</span> <span class="n">resp</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">_retry_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">924</span>     <span class="n">http</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">925</span>     <span class="n">num_retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">926</span>     <span class="s2">&quot;request&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">927</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sleep</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">928</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_rand</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span>     <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uri</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="n">method</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">931</span>     <span class="n">body</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span>     <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">933</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_callbacks</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">callback</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">937</span> <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status</span> <span class="o">&gt;=</span> <span class="mi">300</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">938</span>     <span class="k">raise</span> <span class="n">HttpError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uri</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">939</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">postproc</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
 
-<span class="ne">HttpError</span>: &lt;HttpError 400 when requesting https://www.googleapis.com/discovery/v1/apis/trends/v1beta/rest?key=AIzaSyBdmNHiX2-i7CBX2b60cx9PsSX6OpRpjII returned &quot;API key expired. Please renew the API key.&quot;. Details: &quot;[{&#39;@type&#39;: &#39;type.googleapis.com/google.rpc.ErrorInfo&#39;, &#39;reason&#39;: &#39;API_KEY_INVALID&#39;, &#39;domain&#39;: &#39;googleapis.com&#39;, &#39;metadata&#39;: {&#39;service&#39;: &#39;trends.googleapis.com&#39;}}, {&#39;@type&#39;: &#39;type.googleapis.com/google.rpc.LocalizedMessage&#39;, &#39;locale&#39;: &#39;en-US&#39;, &#39;message&#39;: &#39;API key expired. Please renew the API key.&#39;}]&quot;&gt;
+<span class="nn">File C:\PYTHON\Python39\lib\site-packages\googleapiclient\http.py:191,</span> in <span class="ni">_retry_request</span><span class="nt">(http, num_retries, req_type, sleep, rand, uri, method, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span>     <span class="n">exception</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">191</span>     <span class="n">resp</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="c1"># Retry on SSL errors and socket timeout errors.</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="k">except</span> <span class="n">_ssl_SSLError</span> <span class="k">as</span> <span class="n">ssl_error</span><span class="p">:</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\site-packages\httplib2\__init__.py:1724,</span> in <span class="ni">Http.request</span><span class="nt">(self, uri, method, body, headers, redirections, connection_type)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1722</span>             <span class="n">content</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1723</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1724</span>             <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1725</span>                 <span class="n">conn</span><span class="p">,</span> <span class="n">authority</span><span class="p">,</span> <span class="n">uri</span><span class="p">,</span> <span class="n">request_uri</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">redirections</span><span class="p">,</span> <span class="n">cachekey</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1726</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1727</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1728</span>     <span class="n">is_timeout</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\site-packages\httplib2\__init__.py:1444,</span> in <span class="ni">Http._request</span><span class="nt">(self, conn, host, absolute_uri, request_uri, method, body, headers, redirections, cachekey)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="k">if</span> <span class="n">auth</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1442</span>     <span class="n">auth</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">request_uri</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1444</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conn_request</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">request_uri</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1446</span> <span class="k">if</span> <span class="n">auth</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>     <span class="k">if</span> <span class="n">auth</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">body</span><span class="p">):</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\site-packages\httplib2\__init__.py:1396,</span> in <span class="ni">Http._conn_request</span><span class="nt">(self, conn, request_uri, method, body, headers)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1394</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1395</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1396</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1397</span> <span class="k">except</span> <span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">BadStatusLine</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">ResponseNotReady</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1398</span>     <span class="c1"># If we get a BadStatusLine on the first try then that means</span>
+<span class="g g-Whitespace">   </span><span class="mi">1399</span>     <span class="c1"># the connection just went stale, so retry regardless of the</span>
+<span class="g g-Whitespace">   </span><span class="mi">1400</span>     <span class="c1"># number of RETRIES set.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1401</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">seen_bad_status_line</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\http\client.py:1377,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1377</span>         <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span>     <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1379</span>         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\http\client.py:320,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span> <span class="c1"># read until we get a non-100 response</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">320</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="k">break</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\http\client.py:281,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="k">def</span> <span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">281</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span>         <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\socket.py:704,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">704</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\ssl.py:1242,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1239</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1240</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1241</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1242</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1243</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1244</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File C:\PYTHON\Python39\lib\ssl.py:1100,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1098</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1100</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -731,7 +748,7 @@
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_17832\3208693226.py:14: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_18844\3208693226.py:14: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -739,7 +756,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   dftemp.date = dftemp.date.apply(pd.to_datetime)
 </pre></div>
 </div>
-<img alt="_images/cd69b466f3985aa3513208e6a6b8a13dd85cb5be2b483fa724cad72e38fb5b47.png" src="_images/cd69b466f3985aa3513208e6a6b8a13dd85cb5be2b483fa724cad72e38fb5b47.png" />
+<img alt="_images/0b22c37e98a694bd888bb1569d16ed443eaf85a223a66119a53e7f375d42a77b.png" src="_images/0b22c37e98a694bd888bb1569d16ed443eaf85a223a66119a53e7f375d42a77b.png" />
 </div>
 </div>
 <p>This graph provides insight into how Google searches around devaluation-related topics in Bangladesh fluctuated throughout 2024. The volatility across all three terms suggests significant economic and political developments impacting the country during this period.</p>
@@ -763,7 +780,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_17832\3208693226.py:14: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_18844\3208693226.py:14: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -771,7 +788,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   dftemp.date = dftemp.date.apply(pd.to_datetime)
 </pre></div>
 </div>
-<img alt="_images/59db5fe74d3d333793f3b1a93a721cfb6646da3e09006ae6ee2d9ce288196b4e.png" src="_images/59db5fe74d3d333793f3b1a93a721cfb6646da3e09006ae6ee2d9ce288196b4e.png" />
+<img alt="_images/227ae65b90ae3f7b9e61d177ab59683d583a1288cdf745291d6c6452579ce322.png" src="_images/227ae65b90ae3f7b9e61d177ab59683d583a1288cdf745291d6c6452579ce322.png" />
 </div>
 </div>
 <p>The fluctuations seen in these price-related terms suggest that Bangladesh likely faced significant economic events or disruptions affecting the cost of living during this period. The spike in searches for “Uncontrolled protests” could reflect public unrest or reactions to these price changes.</p>
@@ -795,7 +812,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_17832\3208693226.py:14: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_18844\3208693226.py:14: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -803,7 +820,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   dftemp.date = dftemp.date.apply(pd.to_datetime)
 </pre></div>
 </div>
-<img alt="_images/8cb840c230c0cd310de270618ff945f80a0c2da446fe5e52d6a7d15695d471e6.png" src="_images/8cb840c230c0cd310de270618ff945f80a0c2da446fe5e52d6a7d15695d471e6.png" />
+<img alt="_images/48c45b01ad140c6d8c91210c7fd2477b12a223b0030a30f5498e9369a778e666.png" src="_images/48c45b01ad140c6d8c91210c7fd2477b12a223b0030a30f5498e9369a778e666.png" />
 </div>
 </div>
 <p>This graph indicates that Bangladesh experienced significant protest movements and unrest in 2024, with the public displaying a strong interest in these events through their search activity. The sharp rise in searches for “Uncontrolled protests” highlights a notable intensification of civil unrest during that period.</p>
@@ -821,7 +838,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_17832\3208693226.py:14: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_18844\3208693226.py:14: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -829,7 +846,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   dftemp.date = dftemp.date.apply(pd.to_datetime)
 </pre></div>
 </div>
-<img alt="_images/01d952102a7d7f46782b7bac1e8504a535353c77abc9c7bcf72ebc1d9bf22934.png" src="_images/01d952102a7d7f46782b7bac1e8504a535353c77abc9c7bcf72ebc1d9bf22934.png" />
+<img alt="_images/578e0574142847c6e6c99a2831e079924fb34451b947392da43b6dd0448a84c6.png" src="_images/578e0574142847c6e6c99a2831e079924fb34451b947392da43b6dd0448a84c6.png" />
 </div>
 </div>
 <p>The significant variations in the terms “earthquake” and “floods” suggest that Bangladesh likely faced major natural disasters associated with these events during 2024. The public seems to have been actively tracking the developments related to these incidents through their Google search patterns.</p>
@@ -847,7 +864,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_17832\3208693226.py:14: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_18844\3208693226.py:14: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -855,7 +872,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   dftemp.date = dftemp.date.apply(pd.to_datetime)
 </pre></div>
 </div>
-<img alt="_images/a82c205cc5d5c076ba4cb4c1bd138b276d896a113cce679cfd4c27f32b0526a0.png" src="_images/a82c205cc5d5c076ba4cb4c1bd138b276d896a113cce679cfd4c27f32b0526a0.png" />
+<img alt="_images/ad2b5a2ed4f03f5453389a55a42a1d8c63e07b120ca7a89aced3ade2aece7c40.png" src="_images/ad2b5a2ed4f03f5453389a55a42a1d8c63e07b120ca7a89aced3ade2aece7c40.png" />
 </div>
 </div>
 <p>The variations in the “Old Dhaka” term suggest that it was probably a key element of the urban redevelopment plan, sparking considerable public interest and awareness. The surge in searches for “Uncontrolled protests” during the same period may indicate public dissatisfaction or opposition to certain aspects of the redevelopment plan.</p>
@@ -873,7 +890,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_17832\3208693226.py:14: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ronco\AppData\Local\Temp\ipykernel_18844\3208693226.py:14: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -881,7 +898,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   dftemp.date = dftemp.date.apply(pd.to_datetime)
 </pre></div>
 </div>
-<img alt="_images/a93d30e32c777aadd01f5a128d8b5a75653c5e7bf1e01e5129bbc1aaa7783715.png" src="_images/a93d30e32c777aadd01f5a128d8b5a75653c5e7bf1e01e5129bbc1aaa7783715.png" />
+<img alt="_images/2f834957e9d6625ae966cc384fba1a0fcb727f128914dc0d29c2378c0bc46a45.png" src="_images/2f834957e9d6625ae966cc384fba1a0fcb727f128914dc0d29c2378c0bc46a45.png" />
 </div>
 </div>
 </section>
@@ -1203,7 +1220,7 @@ Name: ADM1_PCODE, dtype: object
       <td>25.424604</td>
       <td>0.889395</td>
       <td>Barisal</td>
-      <td>NaN</td>
+      <td>BD-A</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -1219,7 +1236,7 @@ Name: ADM1_PCODE, dtype: object
       <td>30.287321</td>
       <td>2.737796</td>
       <td>Chittagong</td>
-      <td>NaN</td>
+      <td>BD-B</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -1235,7 +1252,7 @@ Name: ADM1_PCODE, dtype: object
       <td>12.197758</td>
       <td>1.806506</td>
       <td>Dhaka</td>
-      <td>NaN</td>
+      <td>BD-C</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -1251,7 +1268,7 @@ Name: ADM1_PCODE, dtype: object
       <td>38.409385</td>
       <td>1.826575</td>
       <td>Khulna</td>
-      <td>NaN</td>
+      <td>BD-D</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -1267,7 +1284,7 @@ Name: ADM1_PCODE, dtype: object
       <td>8.166577</td>
       <td>0.941812</td>
       <td>Mymensingh</td>
-      <td>NaN</td>
+      <td>BD-H</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -1283,7 +1300,7 @@ Name: ADM1_PCODE, dtype: object
       <td>8.410221</td>
       <td>1.624856</td>
       <td>Rajshahi</td>
-      <td>NaN</td>
+      <td>BD-E</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -1299,7 +1316,7 @@ Name: ADM1_PCODE, dtype: object
       <td>15.369683</td>
       <td>1.465681</td>
       <td>Rangpur</td>
-      <td>NaN</td>
+      <td>BD-F</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -1315,7 +1332,7 @@ Name: ADM1_PCODE, dtype: object
       <td>9.800293</td>
       <td>1.103963</td>
       <td>Sylhet</td>
-      <td>NaN</td>
+      <td>BD-G</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -1471,21 +1488,21 @@ Name: ADM1_PCODE, dtype: object
       <td>Conflict</td>
       <td>Sheikh Hasina</td>
       <td>BD-A</td>
-      <td>13</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Conflict</td>
       <td>Sheikh Hasina</td>
       <td>BD-B</td>
-      <td>48</td>
+      <td>54</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Conflict</td>
       <td>Sheikh Hasina</td>
       <td>BD-C</td>
-      <td>48</td>
+      <td>55</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1499,7 +1516,7 @@ Name: ADM1_PCODE, dtype: object
       <td>Conflict</td>
       <td>Sheikh Hasina</td>
       <td>BD-E</td>
-      <td>37</td>
+      <td>40</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1509,43 +1526,43 @@ Name: ADM1_PCODE, dtype: object
       <td>...</td>
     </tr>
     <tr>
-      <th>108</th>
+      <th>109</th>
+      <td>The urban redevelopment plan</td>
+      <td>Old Dhaka</td>
+      <td>BD-B</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>110</th>
       <td>The urban redevelopment plan</td>
       <td>Old Dhaka</td>
       <td>BD-C</td>
-      <td>48</td>
+      <td>54</td>
     </tr>
     <tr>
-      <th>109</th>
+      <th>111</th>
       <td>The urban redevelopment plan</td>
       <td>Old Dhaka</td>
       <td>BD-D</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>110</th>
+      <th>112</th>
       <td>The urban redevelopment plan</td>
       <td>Old Dhaka</td>
       <td>BD-E</td>
       <td>2</td>
     </tr>
     <tr>
-      <th>111</th>
+      <th>113</th>
       <td>The urban redevelopment plan</td>
       <td>Old Dhaka</td>
       <td>BD-F</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>112</th>
-      <td>The urban redevelopment plan</td>
-      <td>Old Dhaka</td>
-      <td>BD-G</td>
       <td>2</td>
     </tr>
   </tbody>
 </table>
-<p>113 rows × 4 columns</p>
+<p>114 rows × 4 columns</p>
 </div></div></div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1588,7 +1605,7 @@ Name: ADM1_PCODE, dtype: object
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/72929d96499ca9b49f5a823fe8b42b33f7277751825298486708e0907b769a86.png" src="_images/72929d96499ca9b49f5a823fe8b42b33f7277751825298486708e0907b769a86.png" />
+<img alt="_images/df4f9e070312ddbe485b43e24842628a235717a005087e67ef1a7501c475bfe6.png" src="_images/df4f9e070312ddbe485b43e24842628a235717a005087e67ef1a7501c475bfe6.png" />
 </div>
 </div>
 </section>
@@ -2081,11 +2098,11 @@ Datos obtenidos para hotels in dhaka en Hotels.
 Datos obtenidos para booking en Hotels.
 Datos obtenidos para cheap hotels in dhaka en Hotels.
   Category Subcategory                           Term      Value
-0  Finance        Bank                bangladesh bank  28.590909
-1  Finance        Bank             bank of bangladesh  62.681818
-2  Finance        Bank                commercial bank  55.068182
-3  Finance        Bank     bangladesh commercial bank  36.159091
-4  Finance        Bank  commercial bank of bangladesh   5.568182
+0  Finance        Bank                bangladesh bank  30.500000
+1  Finance        Bank             bank of bangladesh  59.590909
+2  Finance        Bank                commercial bank  57.750000
+3  Finance        Bank     bangladesh commercial bank  42.295455
+4  Finance        Bank  commercial bank of bangladesh  11.386364
 </pre></div>
 </div>
 </div>
